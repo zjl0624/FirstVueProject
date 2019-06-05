@@ -1,0 +1,14 @@
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/bin/Debug/netcoreapp2.2/ServerProject.deps.json
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/bin/Debug/netcoreapp2.2/ServerProject.runtimeconfig.json
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/bin/Debug/netcoreapp2.2/ServerProject.runtimeconfig.dev.json
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/bin/Debug/netcoreapp2.2/ServerProject.dll
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/bin/Debug/netcoreapp2.2/ServerProject.pdb
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/obj/Debug/netcoreapp2.2/ServerProject.csprojAssemblyReference.cache
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/obj/Debug/netcoreapp2.2/ServerProject.csproj.CoreCompileInputs.cache
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/obj/Debug/netcoreapp2.2/ServerProject.RazorAssemblyInfo.cache
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/obj/Debug/netcoreapp2.2/ServerProject.RazorAssemblyInfo.cs
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/obj/Debug/netcoreapp2.2/ServerProject.AssemblyInfoInputs.cache
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/obj/Debug/netcoreapp2.2/ServerProject.AssemblyInfo.cs
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/obj/Debug/netcoreapp2.2/ServerProject.RazorTargetAssemblyInfo.cache
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/obj/Debug/netcoreapp2.2/ServerProject.dll
+/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/obj/Debug/netcoreapp2.2/ServerProject.pdb
