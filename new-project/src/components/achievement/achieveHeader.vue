@@ -32,6 +32,7 @@ export default {
     }).then(res => {
       // console.log(res.data)
       this.grades = res.data.data
+      this.sendHeaderNumToHome()
     })
   },
   data () {
@@ -39,7 +40,7 @@ export default {
       headIcon: '',
       name: '张三',
       prefession: '数学老师',
-      interactionNum: 2,
+      interactionNum: 5,
       unauditedNum: 3,
       leavingNum: 4,
       selected: '',
@@ -59,6 +60,13 @@ export default {
       console.log(gname)
       // this.selected = gname
       console.log('选中的年级是：' + this.selected)
+    },
+    sendHeaderNumToHome: function () {
+      this.$emit('listenAchieveHeaderNum', {
+        interactionNum: this.interactionNum,
+        unauditedNum: this.unauditedNum,
+        leavingNum: this.leavingNum
+      })
     }
   }
 }

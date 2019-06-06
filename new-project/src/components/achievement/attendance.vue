@@ -6,11 +6,11 @@
       <span style="color: #dfdfdf;font-size: 11px;display: block;margin-left: 12px;margin-top: 10px">{{ dateStr }}</span>
       <span style="display: inline-block;margin-left: 12px;color: red;font-size: 40px;margin-top: 10px">{{ percentStr }}</span>
       <button @click="clickStart">开始点名</button>
-      <div style="display: block;margin-top: 10px;position: relative">
-        <span style="margin-left: 12px">应到 {{ shouldArrive }}</span>
-        <span style="width: 1px;height: 12px">|</span>
+      <div id="bottom-div">
+        <span style="margin-left: 0px;text-align: center">应到 {{ shouldArrive }}</span>
+        <span>|</span>
         <span>实到 {{ arrived }}</span>
-        <span style="color: #dfdfdf;margin-left: 10px;position: absolute;right: 10px">病假 {{ sickLeave }}  事假 {{ thingsLeave }}  其他 {{ others }}</span>
+        <span style="color: #dfdfdf;margin-left: 0px;right: 0px">病假 {{ sickLeave }}  事假 {{ thingsLeave }}  其他 {{ others }}</span>
       </div>
     </div>
   </div>
@@ -52,4 +52,12 @@ button {
   color: #cda924;
 
 }
+
+  #bottom-div {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 17px;
+  }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div v-show="show" v-bind:style="personStyle">
-    <achieve-header></achieve-header>
+    <achieve-header v-on:listenAchieveHeaderNum="getAchieveHeaderNum"></achieve-header>
     <attendance></attendance>
     <achieve-index></achieve-index>
     <best-article></best-article>
@@ -47,12 +47,12 @@ export default {
         // this.personStyle.style.display = 'none'
       }
     })
+  },
+  methods: {
+    getAchieveHeaderNum: function (data) {
+      this.$emit('listenAchieveHeaderNum', data)
+    }
   }
-  // methods: {
-  //   indexChanged: function (index) {
-  //
-  //   }
-  // }
 }
 </script>
 

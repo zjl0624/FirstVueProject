@@ -53,6 +53,8 @@
         </li>
       </ul>
     </div>
+
+    <input id="input-button" type="button" value="测试"/>
   </div>
 </template>
 
@@ -206,5 +208,11 @@ export default {
   #flex-cell-count-span {
     margin-right: 20px;
     flex-shrink: 0;
+  }
+
+  #input-button {
+    margin-top: 20px;
+    background-color: #ff976a;
+    border: none;
   }
 </style>
