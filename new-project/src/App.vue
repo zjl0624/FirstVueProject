@@ -4,7 +4,7 @@
     <!--<keep-alive>-->
     <!--<transition :name="direction">-->
       <router-view class="appView"></router-view>
-      <van-tabbar route v-model="active" :replace="replace">
+      <van-tabbar v-model="active" :replace="replace" :route="route" v-if="isShowTabbar">
         <van-tabbar-item
           replace
           to="/"
@@ -70,7 +70,9 @@ export default {
     return {
       direction: 'slide-right',
       active: 0,
-      replace: false
+      replace: false,
+      route: true,
+      isShowTabbar: true
     }
   },
   watch: {
@@ -83,6 +85,12 @@ export default {
         this.direction = 'slide-left'
       } else {
         this.direction = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+      }
+
+      if (to.path === '/' || to.path === '/VantList') {
+        this.isShowTabbar = true
+      } else {
+        this.isShowTabbar = false
       }
     }
   }
