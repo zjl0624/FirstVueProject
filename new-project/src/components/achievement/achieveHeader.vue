@@ -23,21 +23,29 @@
 </template>
 
 <script>
+import { getTestData, getGradeInfo } from '../../NetManager/NetManager'
 export default {
   name: 'achieveHeader',
   created () {
-    this.$axios({
-      url: '/api/Homes/GradeInfo',
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      params: {userId: 'xxx'}
-    }).then(res => {
-      // console.log(res.data)
-      this.grades = res.data.data
+    // this.$axios({
+    //   url: '/api/Homes/GradeInfo',
+    //   method: 'post',
+    //   headers: {'Content-Type': 'application/json'},
+    //   params: {userId: 'xxx'}
+    // }).then(res => {
+    //   // console.log(res.data)
+    //   this.grades = res.data.data
+    //   this.sendHeaderNumToHome()
+    //   this.$nextTick(() => {
+    //     console.log(document.getElementById('test').offsetTop)
+    //   })
+    // })
+    getGradeInfo('xxxxx').then((res) => {
+      this.grades = res.data
       this.sendHeaderNumToHome()
-      this.$nextTick(() => {
-        console.log(document.getElementById('test').offsetTop)
-      })
+    })
+    getTestData().then((res) => {
+      console.log(res)
     })
   },
   data () {
