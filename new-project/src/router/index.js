@@ -12,27 +12,42 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/MessageDetail',
       name: 'MessageDetail',
-      component: MessageDetail
+      component: MessageDetail,
+      meta: {
+        keepAlive: false
+      }
     },
     {
       path: '/VantLayout',
       name: 'VantLayout',
-      component: VantLayout
+      component: VantLayout,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/VantList',
       name: 'VantList',
-      component: VantList
+      component: VantList,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/VantTabbar',
       name: 'VantTabbar',
-      component: VantTabbar
+      component: VantTabbar,
+      meta: {
+        keepAlive: true
+      }
     }
   ]
 })

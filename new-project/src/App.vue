@@ -3,7 +3,8 @@
     <!--<navi></navi>-->
     <!--<keep-alive>-->
     <!--<transition :name="direction">-->
-      <router-view class="appView"></router-view>
+    <keep-alive><router-view class="appView" v-if="$route.meta.keepAlive"></router-view></keep-alive>
+    <router-view class="appView" v-if="!$route.meta.keepAlive"></router-view>
       <van-tabbar v-model="active" :replace="replace" :route="route" v-if="isShowTabbar">
         <van-tabbar-item
           replace
