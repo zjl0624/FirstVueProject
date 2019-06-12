@@ -4,6 +4,7 @@ import MessageDetail from '@/components/MessageDetail/MessageDetail'
 import Home from '@/components/Home/Home'
 import VantLayout from '@/components/VantLayout/VantLayout'
 import VantList from '@/components/VantList/VantList'
+import VantTabbar from '@/components/VantTabbar/VantTabbar'
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +28,11 @@ export default new Router({
       path: '/VantList',
       name: 'VantList',
       component: VantList
+    },
+    {
+      path: '/VantTabbar',
+      name: 'VantTabbar',
+      component: VantTabbar
     }
   ]
 })

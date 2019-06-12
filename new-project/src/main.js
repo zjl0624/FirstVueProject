@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { ImagePreview, PullRefresh, List, Row, Col } from 'vant'
+import { ImagePreview, PullRefresh, List, Row, Col, Tabbar, TabbarItem } from 'vant'
 import axios from 'axios'
 // import NetManager from './NetManager/NetManager'
 // Vue.prototype.NetManager = NetManager
@@ -13,6 +13,7 @@ Vue.use(ImagePreview)
 Vue.use(PullRefresh)
 Vue.use(List)
 Vue.use(Row).use(Col)
+Vue.use(Tabbar).use(TabbarItem)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

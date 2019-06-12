@@ -12,7 +12,7 @@
         <person></person>
       </van-list>
     </van-pull-refresh>
-    <tabbar></tabbar>
+    <!--<tabbar></tabbar>-->
     <first v-bind:number="number" v-bind:testCount="testCount" v-if="isShow"></first>
     <input id="testCountButton" type="button" value="xxxxxx" @click="changeTest">
   </div>

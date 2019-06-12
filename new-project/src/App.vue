@@ -2,9 +2,25 @@
   <div id="app">
     <!--<navi></navi>-->
     <!--<keep-alive>-->
-    <transition :name="direction">
+    <!--<transition :name="direction">-->
       <router-view class="appView"></router-view>
-    </transition>
+      <van-tabbar route v-model="active" :replace="replace">
+        <van-tabbar-item
+          replace
+          to="/"
+          icon="home-o"
+        >
+          标签
+        </van-tabbar-item>
+        <van-tabbar-item
+          replace
+          to="/VantList"
+          icon="search"
+        >
+          标签
+        </van-tabbar-item>
+      </van-tabbar>
+    <!--</transition>-->
     <!--</keep-alive>-->
     <!--<router-view v-if="!$route.meta.keepAlive"></router-view>-->
   </div>
@@ -28,6 +44,7 @@ import MessageDetail from './components/MessageDetail/MessageDetail'
 import Home from './components/Home/Home'
 import VantLayout from './components/VantLayout/VantLayout'
 import VantList from './components/VantList/VantList'
+import VantTabbar from './components/VantTabbar/VantTabbar'
 export default {
   name: 'App',
   components: {
@@ -46,11 +63,14 @@ export default {
     MessageDetail,
     Home,
     VantLayout,
-    VantList
+    VantList,
+    VantTabbar
   },
   data () {
     return {
-      direction: 'slide-right'
+      direction: 'slide-right',
+      active: 0,
+      replace: false
     }
   },
   watch: {
