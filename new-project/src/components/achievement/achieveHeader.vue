@@ -17,6 +17,8 @@
       <span class="msgNum" style="display: inline-block;margin-left: 80px;color: red">{{ leavingNum }}</span>
       <span class="msgNum">条未查看消息</span>
     </div>
+    <div id="test">1111</div>
+    <div id="test1">2222</div>
   </div>
 </template>
 
@@ -33,6 +35,9 @@ export default {
       // console.log(res.data)
       this.grades = res.data.data
       this.sendHeaderNumToHome()
+      this.$nextTick(() => {
+        console.log(document.getElementById('test').offsetTop)
+      })
     })
   },
   data () {
@@ -68,6 +73,9 @@ export default {
         leavingNum: this.leavingNum
       })
     }
+  },
+  mounted () {
+    console.log(document.getElementById('test').getBoundingClientRect().y)
   }
 }
 </script>
@@ -110,4 +118,10 @@ select {
   position: relative;
   bottom: 10px
 }
+
+  #test1 {
+    position: fixed;
+    background-color: #1989fa;
+    top: 161px;
+  }
 </style>

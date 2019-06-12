@@ -2,7 +2,9 @@
   <div id="app">
     <!--<navi></navi>-->
     <!--<keep-alive>-->
-    <router-view></router-view>
+    <transition :name="direction">
+      <router-view class="appView"></router-view>
+    </transition>
     <!--</keep-alive>-->
     <!--<router-view v-if="!$route.meta.keepAlive"></router-view>-->
   </div>
@@ -24,6 +26,8 @@ import advert from './components/achievement/advert'
 import news from './components/achievement/news'
 import MessageDetail from './components/MessageDetail/MessageDetail'
 import Home from './components/Home/Home'
+import VantLayout from './components/VantLayout/VantLayout'
+import VantList from './components/VantList/VantList'
 export default {
   name: 'App',
   components: {
@@ -40,7 +44,27 @@ export default {
     advert,
     news,
     MessageDetail,
-    Home
+    Home,
+    VantLayout,
+    VantList
+  },
+  data () {
+    return {
+      direction: 'slide-right'
+    }
+  },
+  watch: {
+    $route (to, from) {
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      if (to.path === '/') {
+        this.direction = 'slide-right'
+      } else if (from.path === '/') {
+        this.direction = 'slide-left'
+      } else {
+        this.direction = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+      }
+    }
   }
 }
 
@@ -61,4 +85,22 @@ export default {
   padding-bottom:80px;
 }
 *{padding:0;margin:0}
+
+  .appView {
+    position: absolute;
+    width:100%;
+    transition: transform 0.3s ease-out;
+  }
+  .slide-left-enter{
+    transform: translate(100%, 0);
+  }
+  .slide-left-leave-active{
+    transform: translate(-50%, 0);
+  }
+  .slide-right-enter {
+    transform: translate(-50%, 0);
+  }
+  .slide-right-leave-active{
+    transform: translate(100%, 0);
+  }
 </style>

@@ -3,13 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { ImagePreview } from 'vant'
+import { ImagePreview, PullRefresh, List, Row, Col } from 'vant'
 import axios from 'axios'
 // import NetManager from './NetManager/NetManager'
 // Vue.prototype.NetManager = NetManager
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 Vue.use(ImagePreview)
+Vue.use(PullRefresh)
+Vue.use(List)
+Vue.use(Row).use(Col)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

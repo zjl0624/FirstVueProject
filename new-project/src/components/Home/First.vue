@@ -5,7 +5,7 @@
       <div id="header-box">
         <div id="header-interaction-num">
           <span>{{ number.interactionNum }}</span>
-          <span>条未查看互动消息</span>
+          <span>条未查看互动消息{{ testCount }}</span>
         </div>
         <div id="header-unauditedNum-num">
           <span>{{ number.unauditedNum }}</span>
@@ -27,6 +27,9 @@ export default {
   props: {
     number: {
       type: Object
+    },
+    testCount: {
+      type: String
     }
   },
   data () {
@@ -38,6 +41,11 @@ export default {
     clickCloseBtn: function () {
       document.body.style.overflowY = 'auto'
       this.isShow = false
+    }
+  },
+  watch: {
+    testCount: function () {
+      console.log('jdsafljf' + this.testCount)
     }
   }
 }

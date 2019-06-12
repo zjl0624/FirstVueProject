@@ -1,12 +1,12 @@
 <template>
-  <div v-show="show" v-bind:style="personStyle">
+  <div v-show="show" v-bind:style="personStyle" id="main-bg-div">
     <achieve-header v-on:listenAchieveHeaderNum="getAchieveHeaderNum"></achieve-header>
     <attendance></attendance>
     <achieve-index></achieve-index>
     <best-article></best-article>
     <best-picture></best-picture>
     <advert></advert>
-    <news></news>
+    <news :newsList="newsList"></news>
     <!--<achieve-footer></achieve-footer>-->
   </div>
 </template>
@@ -25,6 +25,12 @@ import News from './news'
 export default {
   name: 'achievement',
   components: {News, Advert, BestPicture, BestArticle, AchieveFooter, AchieveIndex, Attendance, AchieveHeader},
+  props: {
+    newsList: {
+      type: Array
+    }
+
+  },
   data () {
     return {
       show: true,
@@ -59,9 +65,14 @@ export default {
 <style scoped>
 div {
   width: 100%;
+
   /*height: calc(100% - 60px);*/
   /*margin-bottom: 60px;*/
   /*padding-bottom: 60px;*/
-  /*bottom: 60px;*/
+  /*bottom: 3rem;*/
 }
+
+  #main-bg-div {
+    margin-bottom: 3.5rem;
+  }
 </style>

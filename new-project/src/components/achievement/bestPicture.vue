@@ -3,7 +3,7 @@
     <div style="background-color: white;border-radius: 5px;margin-left: 12px;margin-right: 12px;text-align: left;padding-top: 12px">
       <span style="margin-left: 12px">本周我的最佳照片</span>
       <div style="border-radius: 0px 0px 5px 5px;overflow: hidden">
-        <div class="best-pic" v-for="item in pics" :key="item.picId" style="display: inline-block;width: calc(100%/3);text-align: center;position: relative">
+        <div class="best-pic" v-for="item in pics" :key="item.picId" style="display: inline-block;width: calc(100%/3);text-align: center;position: relative;overflow: hidden">
           <img :src="item.picUrl"/>
           <span style="position: absolute; top: 0%; left: 0%;width:100%;height:100%;background-color: black;opacity: 0.3">
           </span>
