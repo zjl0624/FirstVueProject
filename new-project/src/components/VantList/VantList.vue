@@ -9,7 +9,7 @@
       id="list"
     >
       <!--<div id="sp-div"></div>-->
-      <div id="cell-div" v-for="item in list" :key="item">{{ item }}</div>
+      <div id="cell-div" v-for="item in list" :key="item" @click="clickBaidu">{{ item }}<a href="http://www.baidu.com">去百度</a></div>
       <!--<div id="bottom-div"></div>-->
     </van-list>
   </div>
@@ -18,6 +18,9 @@
 <script>
 export default {
   name: 'VantList',
+  created () {
+    this.getBaidu()
+  },
   data () {
     return {
       list: [],
@@ -43,6 +46,13 @@ export default {
         }
         console.log('加载更多')
       }, 2000)
+    },
+    clickBaidu: function () {
+      sessionStorage.setItem('name', 'xxxxx')
+    },
+    getBaidu: function () {
+      alert('sessionStorage   ' + sessionStorage.getItem('name'))
+      console.log('sessionStorage   ' + sessionStorage.getItem('name'))
     }
   }
 }
@@ -59,7 +69,8 @@ export default {
   }
 
   #main-div {
-    /*height: 300px;*/
+    /*height: calc(100% - 50px);*/
+    /*overflow: auto;*/
   }
 
   #list {

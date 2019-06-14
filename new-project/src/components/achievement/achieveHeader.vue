@@ -18,12 +18,13 @@
       <span class="msgNum">条未查看消息</span>
     </div>
     <div id="test">1111</div>
-    <div id="test1">2222</div>
+    <div id="test1" :style="styleObj">2222</div>
+    <van-loading size="24px" v-if="isShowLoading" vertical>加载中...</van-loading>
   </div>
 </template>
 
 <script>
-import { getTestData, getGradeInfo } from '../../NetManager/NetManager'
+import { getTestData, getGradeInfo, testAll } from '../../NetManager/NetManager'
 export default {
   name: 'achieveHeader',
   created () {
@@ -40,10 +41,24 @@ export default {
     //     console.log(document.getElementById('test').offsetTop)
     //   })
     // })
-    getGradeInfo('xxxxx').then((res) => {
-      this.grades = res.data
-      this.sendHeaderNumToHome()
+    // Promise.all([cutUp(), boil()]).then((results) => {
+    //   console.log('都完成了')
+    //   console.log(results)
+    // })
+
+    testAll().then((res) => {
+      console.log('都完成了')
+      console.log(res)
     })
+
+    getGradeInfo('xxxxx')
+      .then((res) => {
+        this.grades = res.data
+        this.sendHeaderNumToHome()
+      })
+      .catch((error) => {
+        console.log(error)
+      })
     getTestData().then((res) => {
       console.log(res)
     })
@@ -62,7 +77,9 @@ export default {
         // {grade_id: '0201', grade_name: '二年级1班'},
         // {grade_id: '0302', grade_name: '三年级2班'},
         // {grade_id: '0404', grade_name: '四年级4班'}
-      ]
+      ],
+      styleObj: {},
+      isShowLoading: false
     }
   },
   methods: {
@@ -84,6 +101,9 @@ export default {
   },
   mounted () {
     console.log(document.getElementById('test').getBoundingClientRect().y)
+    this.styleObj = {
+      top: document.getElementById('test').getBoundingClientRect().y + 'px'
+    }
   }
 }
 </script>
@@ -130,6 +150,6 @@ select {
   #test1 {
     position: fixed;
     background-color: #1989fa;
-    top: 161px;
+    /*top: 161px;*/
   }
 </style>

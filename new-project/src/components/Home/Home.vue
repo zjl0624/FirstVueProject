@@ -15,6 +15,8 @@
     <!--<tabbar></tabbar>-->
     <first v-bind:number="number" v-bind:testCount="testCount" v-if="isShow"></first>
     <input id="testCountButton" type="button" value="xxxxxx" @click="changeTest">
+    <a id="testBaidu" href="http://www.baidu.com">去百度</a>
+    <cus-loading :isShowLoading="isShowLoading"></cus-loading>
   </div>
 </template>
 
@@ -23,11 +25,22 @@ import Achievement from '../achievement/achievement'
 import Person from '../person/person'
 import Tabbar from '../tabbar/tabbar'
 import First from './First'
+import CusLoading from '../Common/CusLoading'
 export default {
   name: 'Home',
-  components: {First, Achievement, Person, Tabbar},
+  components: {CusLoading, First, Achievement, Person, Tabbar},
   created () {
 
+  },
+  mounted () {
+    let y = localStorage.getItem('tea')
+    console.log(y)
+    window.scrollTo(0, y)
+    // this.$nextTick(()=>{
+    //   let y = localStorage.getItem('tea')
+    //   console.log(y)
+    //   window.scrollTo(0,y)
+    // })
   },
   data () {
     return {
@@ -41,7 +54,8 @@ export default {
       list: [],
       testCount: '22',
       offset: 0,
-      newsList: []
+      newsList: [],
+      isShowLoading: false
     }
   },
   methods: {
@@ -63,6 +77,7 @@ export default {
     },
     onLoad: function () {
       // 异步更新数据
+      this.isShowLoading = true
       setTimeout(() => {
         console.log('上拉成功')
         for (let i = 0; i < 5; i++) {
@@ -82,7 +97,7 @@ export default {
         }
         // 加载状态结束
         this.loading = false
-
+        this.isShowLoading = false
         // 数据全部加载完成
         if (this.newsList.length >= 20) {
           this.finished = true
@@ -107,6 +122,19 @@ export default {
     position: fixed;
     left: 100px;
     bottom: 200px;
+    color: red;
+  }
+
+  .loading {
+    position: fixed;
+    top: 200px;
+    left: 100px;
+  }
+
+  #testBaidu {
+    position: fixed;
+    left: 100px;
+    bottom: 100px;
     color: red;
   }
 </style>

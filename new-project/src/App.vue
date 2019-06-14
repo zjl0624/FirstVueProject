@@ -9,9 +9,13 @@
         <van-tabbar-item
           replace
           to="/"
-          icon="home-o"
         >
-          标签
+          <span>首页</span>
+          <img
+            slot="icon"
+            slot-scope="props"
+            :src="props.active ? icon.active : icon.normal"
+          >
         </van-tabbar-item>
         <van-tabbar-item
           replace
@@ -46,8 +50,12 @@ import Home from './components/Home/Home'
 import VantLayout from './components/VantLayout/VantLayout'
 import VantList from './components/VantList/VantList'
 import VantTabbar from './components/VantTabbar/VantTabbar'
+import CusLoading from './components/Common/CusLoading'
 export default {
   name: 'App',
+  created () {
+    document.getElementsByName('appView').scrollTop = 700
+  },
   components: {
     tabbar,
     achievement,
@@ -65,7 +73,8 @@ export default {
     Home,
     VantLayout,
     VantList,
-    VantTabbar
+    VantTabbar,
+    CusLoading
   },
   data () {
     return {
@@ -73,7 +82,11 @@ export default {
       active: 0,
       replace: false,
       route: true,
-      isShowTabbar: true
+      isShowTabbar: true,
+      icon: {
+        normal: require('./assets/cm_huli_tishi_icon.png'),
+        active: require('./assets/gongxianbang_huangguan1_icon.png')
+      }
     }
   },
   watch: {
@@ -116,7 +129,7 @@ export default {
 *{padding:0;margin:0}
 
   .appView {
-    position: absolute;
+    /*position: absolute;*/
     width:100%;
     transition: transform 0.3s ease-out;
   }

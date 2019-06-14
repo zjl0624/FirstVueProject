@@ -5,7 +5,7 @@
       <span style="display: block;margin-left: 12px;margin-top: 10px;font-size: 14px;color: gray">{{ latestDateStr }}</span>
       <div style="position: relative">
         <ul>
-          <li v-for="(message,index) in newsList" :key="message.msgId" @click="clickCell(index)">
+          <li v-for="(message,index) in newsList" :key="index" @click="clickCell(index)">
             <span style="color: gray;font-size: 14px;border: 1px solid gray;border-radius: 5px;padding: 0px 5px">{{ message.msgTypeContent }}</span>
             <span>{{ message.title }}</span>
             <div>
@@ -32,6 +32,8 @@
         </ul>
       </div>
     </div>
+    <van-loading size="24px" v-if="isShowLoading" vertical>加载中...</van-loading>
+
   </div>
 </template>
 
@@ -45,6 +47,7 @@ export default {
   },
   data () {
     return {
+      isShowLoading: false,
       latestDateStr: '2019-08-09',
       totalMsg: [
         {
