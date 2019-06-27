@@ -3,10 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">-->
+    <!--<script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>-->
     <title>啦啦啦</title>
   </head>
-  <body>
+  <body id="body">
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
 </html>
+<script>
+  // document.getElementById('body').addEventListener("pageHide", test);
+  function test () {
+    alert('哈哈')
+  }
+
+  window.addEventListener('onbeforeunload', function () {
+    alert('fffff')
+  })
+</script>

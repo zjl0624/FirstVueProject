@@ -1,5 +1,11 @@
 <template>
   <div id="main-div">
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-success">Left</button>
+      <button type="button" class="btn btn-default">Middle</button>
+      <button type="button" class="btn btn-default">Right</button>
+    </div>
+    <div><button type="button">test</button></div>
     <van-list
       v-model="loading"
       :finished="finished"
@@ -12,6 +18,7 @@
       <div id="cell-div" v-for="item in list" :key="item" @click="clickBaidu">{{ item }}<a href="http://www.baidu.com">去百度</a></div>
       <!--<div id="bottom-div"></div>-->
     </van-list>
+
   </div>
 </template>
 
@@ -80,5 +87,9 @@ export default {
   #bottom-div {
     height: 100px;
     background-color: yellow;
+  }
+
+  .btn-success {
+    background-color: red;
   }
 </style>

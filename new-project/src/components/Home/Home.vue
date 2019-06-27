@@ -107,6 +107,7 @@ export default {
     changeTest: function () {
       this.testCount = '233'
       document.getElementById('test').innerHTML = '1111111111111111111111111111111111111111111111111111'
+      window.scrollTo(0, 1000)
       // document.getElementsByClassName('msgNum')[0].style.display = 'none'
     }
   }

@@ -5,6 +5,7 @@ import Home from '@/components/Home/Home'
 import VantLayout from '@/components/VantLayout/VantLayout'
 import VantList from '@/components/VantList/VantList'
 import VantTabbar from '@/components/VantTabbar/VantTabbar'
+import VantTab from '@/components/VantTab/VantTab'
 Vue.use(Router)
 
 export default new Router({
@@ -48,6 +49,11 @@ export default new Router({
       meta: {
         keepAlive: true
       }
+    },
+    {
+      path: '/VantTab',
+      name: 'VantTab',
+      component: VantTab
     }
   ]
 })
