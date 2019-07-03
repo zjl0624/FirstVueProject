@@ -1,13 +1,18 @@
 ﻿<Properties StartupConfiguration="{FF9956D6-106B-45CD-81EB-8AFF87CB95CD}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomesController.cs">
     <Files>
-      <File FileName="Controllers/HomesController.cs" Line="1" Column="1" />
+      <File FileName="Controllers/HomesController.cs" Line="37" Column="44" />
+      <File FileName="Controllers/ValuesController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ServerProject" expanded="True">
-            <Node name="ServerProject" expanded="True" />
+            <Node name="ServerProject" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="HomesController.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
