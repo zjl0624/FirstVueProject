@@ -55,6 +55,13 @@
     </div>
 
     <input id="input-button" type="button" value="测试"/>
+
+    <div class="avg-div">
+      <div class="avg-item avg-item-left">第一块</div>
+      <div class="avg-item avg-item-left">第二块</div>
+      <div class="avg-item avg-item-left">第三块</div>
+      <div class="avg-item avg-item-right">第四块</div>
+    </div>
   </div>
 </template>
 
@@ -214,5 +221,28 @@ export default {
     margin-top: 20px;
     background-color: #ff976a;
     border: none;
+  }
+
+  .avg-div {
+    padding: 20px 20px 20px 20px;
+    display: flex;
+  }
+
+  .avg-item {
+    position: relative;
+    display: inline-block;
+    width: calc(25% - 1px);
+    /*width: 25%;*/
+    border-top: solid red 1px;
+    border-bottom: solid red 1px;
+    /*float: left;*/
+  }
+
+  .avg-item-left {
+    border-left: solid red 1px;
+  }
+
+  .avg-item-right {
+    border-right: solid red 1px;
   }
 </style>
