@@ -26,9 +26,9 @@ export default {
       percentStr: '90%',
       shouldArrive: 20,
       arrived: 18,
-      sickLeave: 3,
-      thingsLeave: 5,
-      others: 2
+      sickLeave: 30,
+      thingsLeave: 50,
+      others: 20
     }
   },
   methods: {

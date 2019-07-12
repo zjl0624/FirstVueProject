@@ -47,8 +47,8 @@
       <ul id="flex-ul">
         <li id="flex-cell-li">
           <span id="flex-cell-index-span">1</span>
-          <img src="http://n.sinaimg.cn/photo/700/w1000h500/20190605/9467-hxyuaph4976302.jpg" id="flex-cell-img"/>
-          <span id="flex-cell-name-span">名字名字名字名字名字名字名字名字名字名字名字名字</span>
+          <!--<img src="http://n.sinaimg.cn/photo/700/w1000h500/20190605/9467-hxyuaph4976302.jpg" id="flex-cell-img"/>-->
+          <!--<span id="flex-cell-name-span">名字名字名字名字名字名字名字名字名字名字名字名字</span>-->
           <span id="flex-cell-count-span">1000000</span>
         </li>
       </ul>
@@ -62,6 +62,16 @@
       <div class="avg-item avg-item-left">第三块</div>
       <div class="avg-item avg-item-right">第四块</div>
     </div>
+
+    <div class="cell-div">
+      <img src="../../assets/att_denglu_bg_icon.png" class="cell-img"/>
+      <div class="cell-content-div">
+        <span class="cell-span">总销售量</span>
+        <span class="cell-span">10件</span>
+      </div>
+    </div>
+
+    <div class="red-div green-div"></div>
   </div>
 </template>
 
@@ -224,25 +234,62 @@ export default {
   }
 
   .avg-div {
-    padding: 20px 20px 20px 20px;
-    display: flex;
+    /*padding: 20px;*/
+    /*display: flex;*/
+    white-space: nowrap;
   }
 
   .avg-item {
     position: relative;
     display: inline-block;
-    width: calc(25% - 1px);
-    /*width: 25%;*/
-    border-top: solid red 1px;
-    border-bottom: solid red 1px;
+    /*width: calc(25% - 1px);*/
+    width: 25%;
+    /*border-top: solid red 1px;*/
+    /*border-bottom: solid red 1px;*/
     /*float: left;*/
   }
 
   .avg-item-left {
-    border-left: solid red 1px;
+    /*border-left: solid red 1px;*/
   }
 
   .avg-item-right {
-    border-right: solid red 1px;
+    /*border-right: solid red 1px;*/
   }
+
+  .cell-div {
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+    width: 200px;
+    border: 2px solid red;
+  }
+
+  .cell-img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .cell-content-div {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cell-span {
+    display: block;
+  }
+
+  .green-div {
+    background-color: green;
+  }
+
+  .red-div {
+    width: 100%;
+    height: 100px;
+    background-color: red;
+  }
+
 </style>
