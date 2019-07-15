@@ -1,6 +1,6 @@
 <template>
   <div style="background-color: chartreuse">
-    <span>{{ msgId }}</span>
+    <span @click="goback">{{ msgId }}</span>
     <div id="img-bg-div">
       <img src="../../assets/att_denglu_bg_icon.png"/><img src="../../assets/att_denglu_bg_icon.png"/>
     </div>
@@ -72,7 +72,14 @@
     </div>
 
     <div class="red-div green-div"></div>
-  </div>
+
+    <div class="box1">
+      <div class="inner">
+      </div>
+      <div class="inner1">
+      </div>
+    </div>
+    </div>
 </template>
 
 <script>
@@ -83,13 +90,18 @@ export default {
       msgId: this.$route.params.msgId,
       boxArr: [
         {name: '第一块'},
-        {name: '第二块'},
-        {name: '第三块'},
-        {name: '第四块'},
-        {name: '第五块'},
-        {name: '第六块'}
+        {name: '第二asdfafdafd块'},
+        {name: '第三dafafdaffdafasfdfasfadsfdffasf块'},
+        {name: '第四dfafd块'},
+        {name: '第五dsfasfewrqrwwerqrewr块'},
+        {name: '第六erwqewreqrreqrereqwrerereqreqrqerqerqerqerq块'}
       ],
       leftImage: ''
+    }
+  },
+  methods: {
+    goback: function () {
+      this.$router.go(-1)
     }
   }
 }
@@ -115,12 +127,13 @@ export default {
   }
 
   .box-item {
-    /*width: 100px;*/
+    width: 100px;
     /*height: 50px;*/
     text-align: center;
     background-color: #1989fa;
     padding: 0px 20px;
     margin-top: 10px;
+    flex-grow: 1;
   }
 
   /*.box-item-name {*/
@@ -290,6 +303,26 @@ export default {
     width: 100%;
     height: 100px;
     background-color: red;
+  }
+
+  .box1{
+    display: flex;
+    flex-direction: row;
+    margin:100px auto;
+    width:400px;
+    height:200px;
+    border:1px solid red;
+
+  }
+  .inner{
+    flex-basis:100px;
+    height:100px;
+    background:pink;
+  }
+  .inner1 {
+    flex-basis: 200px;
+    height: 100px;
+    background: blue;
   }
 
 </style>
