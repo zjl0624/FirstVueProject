@@ -1,12 +1,12 @@
 <template>
   <div v-show="show" v-bind:style="personStyle">
-    <van-image-preview
-      v-model="show"
-      :images="images"
-      @change="onChange"
-    >
-      <!--<template v-slot:index>第{ index }页</template>-->
-    </van-image-preview>
+    <!--<van-image-preview-->
+      <!--v-model="show"-->
+      <!--:images="images"-->
+      <!--@change="onChange"-->
+    <!--&gt;-->
+      <!--&lt;!&ndash;<template v-slot:index>第{ index }页</template>&ndash;&gt;-->
+    <!--</van-image-preview>-->
     <!--<div id="bottom"></div>-->
   </div>
 </template>

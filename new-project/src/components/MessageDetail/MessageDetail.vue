@@ -79,22 +79,27 @@
       <div class="inner1">
       </div>
     </div>
-    </div>
+
+    <date-select style="position: fixed;top: 0;left: 0;right: 0"></date-select>
+  </div>
 </template>
 
 <script>
+
+import DateSelect from './dateSelect'
 export default {
   name: 'MessageDetail',
+  components: {DateSelect},
   data () {
     return {
       msgId: this.$route.params.msgId,
       boxArr: [
         {name: '第一块'},
-        {name: '第二asdfafdafd块'},
-        {name: '第三dafafdaffdafasfdfasfadsfdffasf块'},
-        {name: '第四dfafd块'},
-        {name: '第五dsfasfewrqrwwerqrewr块'},
-        {name: '第六erwqewreqrreqrereqwrerereqreqrqerqerqerqerq块'}
+        {name: '第二abraded块'},
+        {name: '第三dataclasses块'},
+        {name: '第四daffi块'},
+        {name: '第五difference块'},
+        {name: '第六entrepreneurs块'}
       ],
       leftImage: ''
     }
@@ -103,6 +108,12 @@ export default {
     goback: function () {
       this.$router.go(-1)
     }
+  },
+  mounted () {
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady () {
+      // WeixinJSBridge.call('hideToolbar')
+      // WeixinJSBridge.call('hideOptionMenu')
+    })
   }
 }
 </script>

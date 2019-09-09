@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{FF9956D6-106B-45CD-81EB-8AFF87CB95CD}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomesController.cs">
     <Files>
-      <File FileName="Controllers/HomesController.cs" Line="37" Column="44" />
+      <File FileName="Controllers/HomesController.cs" Line="17" Column="1" />
       <File FileName="Controllers/ValuesController.cs" />
     </Files>
     <Pads>
@@ -21,7 +21,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/zjl/Desktop/MyProject/FirstVueProject/ServerProject/Controllers/HomesController.cs" relfile="Controllers/HomesController.cs" line="17" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.ServerProject PreferredExecutionTarget="MonoDevelop.Default" />
