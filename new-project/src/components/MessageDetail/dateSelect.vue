@@ -1,29 +1,29 @@
 <template>
   <section class="selecter">
-    <div class="title" @click="isShow=!isShow"><div class="text">{{value}}</div></div>
+    <div class="title" @click="isShow=!isShow"><div class="text">{{ value }}</div></div>
     <ul v-show="isShow">
-      <li v-for="(item, index) in list" :key="index" @click="changeTitle(item)">{{item}}</li>
+      <li v-for="(item, index) in list" :key="index" @click="changeTitle(item)">{{ item }}</li>
     </ul>
   </section>
 </template>
 
 <script>
-  export default {
-    name: 'dateSelect',
-    data(){
-      return {
-        list:['2019/09/10-2019/09/11','2019/09-2019/00','2019/09/0-201/09/10'],
-        value:'2019/09/09-2019/09/10',
-        isShow:false
-      }
-    },
-    methods:{
-      changeTitle(item){
-        this.value=item;
-        this.isShow=false;
-      }
+export default {
+  name: 'dateSelect',
+  data () {
+    return {
+      list: ['2019/09/10-2019/09/11', '2019/09-2019/00', '2019/09/0-201/09/10'],
+      value: '2019/09/09-2019/09/10',
+      isShow: false
+    }
+  },
+  methods: {
+    changeTitle (item) {
+      this.value = item
+      this.isShow = false
     }
   }
+}
 </script>
 
 <style scoped>
